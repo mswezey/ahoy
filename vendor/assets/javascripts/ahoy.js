@@ -21,6 +21,7 @@
   var canStringify = typeof(JSON) !== "undefined" && typeof(JSON.stringify) !== "undefined";
   var eventQueue = [];
   var page = ahoy.page || window.location.pathname;
+  var hash = window.location.hash;
   var visitsUrl = ahoy.visitsUrl || "/ahoy/visits"
   var eventsUrl = ahoy.eventsUrl || "/ahoy/events"
 
@@ -130,6 +131,7 @@
       id: $target.attr("id"),
       "class": $target.attr("class"),
       page: page,
+      hash: hash,
       section: $target.closest("*[data-section]").data("section")
     };
   }
